@@ -44,7 +44,6 @@
         h2 { color: var(--accent); border-bottom: 2px solid var(--light); padding-bottom: 10px; margin-top: 0; }
         h3 { color: var(--primary); margin-top: 25px; }
         
-        /* Gallery Styles */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
         .gallery-item { position: relative; overflow: hidden; border-radius: 8px; background: #eee; aspect-ratio: 4 / 3; border: 1px solid #ddd; }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
@@ -53,31 +52,64 @@
         
         .skill-tag { display: inline-block; background: var(--light); padding: 6px 18px; margin: 5px; border-radius: 25px; font-size: 0.85em; font-weight: 600; color: var(--primary); }
 
-        /* Footer & Social Media */
-        footer { background: var(--primary); color: white; padding: 40px 20px; text-align: center; margin-top: 40px; }
-        .social-links { margin-bottom: 20px; }
-        .social-icon {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            margin: 0 10px;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            font-size: 0.9em;
+        /* FIXED FOOTER STYLES */
+        footer { 
+            background: var(--primary); 
+            color: white; 
+            padding: 50px 20px; 
+            text-align: center; 
+            margin-top: 40px; 
         }
-        .social-icon:hover { background: var(--accent); transform: translateY(-3px); }
+        
+        .social-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            min-width: 100px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: 0.3s;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .social-box:hover .social-icon {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .social-label {
+            font-size: 0.75em;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
         .footer-text { font-size: 0.85em; opacity: 0.7; margin: 5px 0; }
 
-        /* Mobile Adjustments */
         @media (max-width: 600px) { 
             h1 { font-size: 1.8em; }
             section { padding: 20px; }
             header { padding: 40px 15px; }
+            .social-container { gap: 10px; }
+            .social-box { min-width: 70px; }
         }
     </style>
 </head>
@@ -102,35 +134,11 @@
                 passion for continuous self-development.
             </p>
 
-            <h3>Early Tech & Creative Roots</h3>
-            <p>
-                Saiem began his journey into technology at an early age in 2002, driven by curiosity and 
-                self-learning. He initially focused on graphic design, mastering tools such as 
-                <strong>Adobe Photoshop and Illustrator</strong>, while also developing foundational skills 
-                in HTML and web technologies. This early exposure laid the groundwork for his future in 
-                both creative and technical fields.
-            </p>
-
             <h3>Education & Technical Foundation</h3>
             <p>
                 He later earned a <strong>Diploma in Computer Science and Engineering</strong> in Dhaka, Bangladesh, 
-                further strengthening his technical capabilities. Expanding his expertise into industrial design, 
-                he pursued studies in shipbuilding at the <strong>Bangladesh Marine Academy</strong>, followed by 
-                professional training in <strong>AutoCAD</strong> for shipbuilding and construction design 
-                through an Autodesk-authorized institute.
-            </p>
-            <p>
-                In 2008, Saiem advanced his education internationally in <strong>Singapore</strong>, where he 
-                specialized in mechanical and shipbuilding structural design at the <strong>Institute of Technical Education</strong>. 
-                Alongside his formal education, he completed multiple professional and trade certifications, 
-                enhancing his versatility across engineering disciplines.
-            </p>
-
-            <h3>Professional Career & Marine Sector</h3>
-            <p>
-                Professionally, Saiem began his career in Singapore in 2007 as an Office Administrator. Over time, 
-                he expanded his role across multiple engineering companies within the marine sector, gaining 
-                extensive experience in project coordination, operations management, and business development. 
+                and specialized in mechanical and shipbuilding structural design at the <strong>Institute of Technical Education, Singapore</strong>. 
+                His expertise includes professional training in <strong>AutoCAD</strong> for shipbuilding and construction design.
             </p>
 
             <h3>Entrepreneurship & Innovation</h3>
@@ -138,13 +146,6 @@
                 Beyond his professional achievements, Saiem is an entrepreneur and innovator. He is the 
                 <strong>Co-founder and Head of Business Development</strong> of <strong>Drivelaar</strong> and <strong>Laaref Technology</strong>. 
                 His work focuses on simplifying compliance for drivers and providing affordable digital solutions for businesses.
-            </p>
-
-            <h3>Personal Philosophy & Interests</h3>
-            <p>
-                Known for his calm confidence and adaptability, Saiem thrives in environments that require 
-                problem-solving and leadership. Outside of work, he enjoys traveling, exploring nature, 
-                and is a fan of <strong>horror and action films</strong>.
             </p>
 
             <p><em>With a lifelong commitment to learning, Mohammed Saiem Islam continues to pursue opportunities that combine technology, business, and real-world impact.</em></p>
@@ -183,12 +184,27 @@
 
 <footer>
     <div class="container">
-        <div class="social-links">
-            <a href="#" class="social-icon" target="_blank" title="LinkedIn">in</a>
-            <a href="https://drivelaar.com" class="social-icon" target="_blank" title="Drivelaar">Drivelaar App</a>
-            <a href="https://laaref.com" class="social-icon" target="_blank" title="Laaref">Laaref Technology</a>
-            <a href="https://www.facebook.com/share/18LSgAwiyu/" class="social-icon" target="_blank" title="Facebook">Facebook</a>
-            <a href="mailto:saiemmsi@gmail.com" class="social-icon" title="Email">Email</a>
+        <div class="social-container">
+            <a href="#" class="social-box" target="_blank">
+                <div class="social-icon">in</div>
+                <span class="social-label">LinkedIn</span>
+            </a>
+            <a href="https://drivelaar.com" class="social-box" target="_blank">
+                <div class="social-icon">D</div>
+                <span class="social-label">Drivelaar App</span>
+            </a>
+            <a href="https://laaref.com" class="social-box" target="_blank">
+                <div class="social-icon">L</div>
+                <span class="social-label">Laaref Tech</span>
+            </a>
+            <a href="https://www.facebook.com/share/18LSgAwiyu/" class="social-box" target="_blank">
+                <div class="social-icon">f</div>
+                <span class="social-label">Facebook</span>
+            </a>
+            <a href="mailto:saiemmsi@gmail.com" class="social-box">
+                <div class="social-icon">@</div>
+                <span class="social-label">Email</span>
+            </a>
         </div>
         
         <p><strong>Mohammed Saiem Islam</strong></p>
